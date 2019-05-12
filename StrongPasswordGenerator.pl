@@ -7,7 +7,10 @@ my $choice;
 my $passize;
 my $nchar;
 my $genpass;
+my $user;
+my $path;
 my @char = ();
+
 
 #---------------------------------------
 
@@ -65,3 +68,14 @@ for(1..$passize) {
 #--------------------------------------
 
 print "$genpass\n";
+print "Would you like to save this password ? (Y/n)\n";
+
+$choice = choice();
+chomp($user = `whoami`);
+$path = "/home/$user/strongpassgen/hash.txt";
+if($choice) {
+        mkdir "/home/$user/strongpassgen";
+        open(my $file, '>>', $path);
+        print($file "$genpass\n");
+        close($file);
+}
