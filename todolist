@@ -1,5 +1,5 @@
 1. Gérer le stockage des mots de passe (création de fichiers hashés, par exemple)
-2. Créer des tables de hash reliant chaque mot de passe à sont rôle (md1 -> gmail, par exemple)
+2. Créer des tables de hash reliant chaque mot de passe à son rôle (mdp1 -> gmail, par exemple)
 3. Mettre en place un mot de passe pour sécuriser l'application : l'application pourrait demander un mot de passe 
 lorque l'utilisateur tente d'acceder aux mot de passes stockés.
 4. Mieux gérer les choix, mettre en place une commande faite d'arguements (./passgen -t 11 -n -U pour demander des nombres 
