@@ -68,14 +68,21 @@ for(1..$passize) {
 #--------------------------------------
 
 print "$genpass\n";
-print "Would you like to save this password ? (Y/n)\n";
 
+# Saving password option --
+#--------------------------------------
+
+print "Would you like to save this password ? (Y/n)\n";
 $choice = choice();
 chomp($user = `whoami`);
 $path = "/home/$user/strongpassgen/hash.txt";
 if($choice) {
+        print "util pass ?";
         mkdir "/home/$user/strongpassgen";
+        my $utili = <STDIN>;
         open(my $file, '>>', $path);
-        print($file "$genpass\n");
+        print($file "$genpass => $utili\n");
         close($file);
 }
+
+#--------------------------------------
